@@ -5,48 +5,60 @@ Sergej Bakanow, Denis Troccolo, Anselm Koch, Robin Schüle, Marvin Simon
 
 ## Aufgabe 1
 
-1. Da jede Würfelseite die gleiche Chance hat oben zu landen und wir 6 Würfelseiten haben, 
+### 1. 
+Da jede Würfelseite die gleiche Chance hat oben zu landen und wir 6 Würfelseiten haben, 
 hat jede Würfelseite eine Wahrscheinlichkeit von 1/6 (~16,66%) oben zu landen. Um die´Stärke der Würfel zu bestimmen
 lassen wir jeweils 2 Würfel gegeneinander antreten und bestimmen die Wahrscheinlichkeit des Sieges.
 
-    ### Vergleich Würfel A und Wüfel B
+### Vergleich Würfel A und Wüfel B
+A würfelt 5, B Wurf ist egal, da B keine Zahl >= 5 hat: A gewinnt mit
+der Wahrscheinlichkeit 3 * 1/6 = 1/2 ~50%
+A würfelt 4, B würfelt 3: A gewinnt mit der Wahrscheinlichkeit  (1 * 1
+6) * (3 * 1/6) = 1/12 ~ 8,33%
+A würfelt 1, B Wurf ist egal, da B keine Zahl <= 1 hat: A verliert mit
+der Wahrscheinlichkeit (2 * 1/6) * (6 * 1/6) = 1/3 ~33,33%
+A und B trennen sich unentschieden wenn A und B eine 4 würfeln:
+Unentschieden mit der Wahrscheinlichkeit (1 * 1/6) * (3 * 1/6) = 1/12
+~8,33%
 
-    A würfelt 5, B Wurf ist egal, da B keine Zahl >= 5 hat: A gewinnt mit der Wahrscheinlichkeit 3 * 1/6 = 1/2 ~50%
-    A würfelt 4, B würfelt 3: A gewinnt mit der Wahrscheinlichkeit  (1 * 1/6) * (3 * 1/6) = 1/12 ~ 8,33%
-    A würfelt 1, B Wurf ist egal, da B keine Zahl <= 1 hat: A verliert mit der Wahrscheinlichkeit (2 * 1/6) * (6 * 1/6) = 1/3 ~33,33%
-    A und B trennen sich unentschieden wenn A und B eine 4 würfeln: Unentschieden mit der Wahrscheinlichkeit (1 * 1/6) * (3 * 1/6) = 1/12 ~8,33%
-    
-    ### Vergleich Würfel C und Würfel D
-    
-    C würfelt 6, D würfelt 2 oder 3: C gewinnt mit der Wahrscheinlichkeit (3 * 1/6) * (4 * 1/6) = 1/3 ~33,33%
-    C würfelt 1, D Wurf ist egal, da D keine Zahl <= 1 hat: C verliert mit der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
-    C und D trennen sich unentschieden wenn C und D eine 6 würfeln: Unentschieden mit der Wahrscheinlickeit (3 * 1/6) * (2 * 1/6) = 1/6 ~16,66%
-    
-    ### Vergleich Würfel A und Würfel D
-    
-    A würfelt 4 oder 5, D würfelt 2 oder 3: A gewinnt mit der Wahrscheinlichkeit (4 * 1/6) * (4 * 1/6) = 4/9 44,44%
-    A würfelt 1, D Wurf ist egal, da D keine Zahl <= 1 hat: A verliert mit der Wahrscheinlichkeit (2 * 1/6) * (6 * 1/6) = 1/3 ~ 33,33%
-    A würfelt 4 oder 5, D würfelt 6: A verliert mit der Wahrscheinlichkeit (4 * 1/6) * (2 * 1/6) = 2/9 ~ 22,22%
-    
-    ### Vergleich Würfel B und Würfel C
-    
-    C würfelt 1, B Wurf ist egal, da B keine Zahl <= 1 hat: C verliert mit der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
-    C würfelt 6, B Wurf ist egal, da B keine Zahl >= 6 hat: C gewinnt mit der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
-    
-    **Daraus ergibt sich die Reihenfolge: D -> A -> B = C**
+### Vergleich Würfel C und Würfel D
+C würfelt 6, D würfelt 2 oder 3: C gewinnt mit der Wahrscheinlichkeit
+(3 * 1/6) * (4 * 1/6) = 1/3 ~33,33%
+C würfelt 1, D Wurf ist egal, da D keine Zahl <= 1 hat: C verliert mit
+der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
+C und D trennen sich unentschieden wenn C und D eine 6 würfeln:
+Unentschieden mit der Wahrscheinlickeit (3 * 1/6) * (2 * 1/6) = 1/6 ~16
+66%
+
+### Vergleich Würfel A und Würfel D
+
+A würfelt 4 oder 5, D würfelt 2 oder 3: A gewinnt mit der
+Wahrscheinlichkeit (4 * 1/6) * (4 * 1/6) = 4/9 44,44%
+A würfelt 1, D Wurf ist egal, da D keine Zahl <= 1 hat: A verliert mit
+der Wahrscheinlichkeit (2 * 1/6) * (6 * 1/6) = 1/3 ~ 33,33%
+A würfelt 4 oder 5, D würfelt 6: A verliert mit der Wahrscheinlichkeit 
+(4 * 1/6) * (2 * 1/6) = 2/9 ~ 22,22%
+### Vergleich Würfel B und Würfel C
+C würfelt 1, B Wurf ist egal, da B keine Zahl <= 1 hat: C verliert mit
+der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
+C würfelt 6, B Wurf ist egal, da B keine Zahl >= 6 hat: C gewinnt mit
+der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
+
+**Daraus ergibt sich die Reihenfolge: D -> A -> B = C**
 
 
-2. ### Vergleich Würfel A und normaler Würfel
-    ![Dice_A_vs_Normal](img/Abgabe_1/Dice_A_vs_Normal.png)
+### 2. Vergleich Würfel A und normaler Würfel
+    
+![Dice_A_vs_Normal](img/Abgabe_1/Dice_A_vs_Normal.png)
 
-    ### Vergleich Würfel B und normaler Würfel
-    ![Dice_B_vs_Normal](img/Abgabe_1/Dice_B_vs_Normal.png)
+### Vergleich Würfel B und normaler Würfel
+![Dice_B_vs_Normal](img/Abgabe_1/Dice_B_vs_Normal.png)
 
-    ### Vergleich Würfel C und normaler Würfel
-    ![Dice_C_vs_Normal](img/Abgabe_1/Dice_C_vs_Normal.png)
+### Vergleich Würfel C und normaler Würfel
+![Dice_C_vs_Normal](img/Abgabe_1/Dice_C_vs_Normal.png)
 
-    ### Vergleich Würfel D und normaler Würfel
-    ![Dice_D_vs_Normal](img/Abgabe_1/Dice_D_vs_Normal.png)
+### Vergleich Würfel D und normaler Würfel
+![Dice_D_vs_Normal](img/Abgabe_1/Dice_D_vs_Normal.png)
 
 
    
@@ -207,5 +219,5 @@ Step 99: 9023073552950601695819250958215557785144367188
     }
     ```
 4. n^2
-5. n^2?
+5. Jedes result wird gespeichert in einer map, 
 6. PathAnzahl * Steps + 1?

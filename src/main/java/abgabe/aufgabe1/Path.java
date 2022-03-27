@@ -2,6 +2,7 @@ package abgabe.aufgabe1;
 
 import java.math.BigInteger;
 import java.util.HashMap;
+import java.util.Timer;
 
 public class Path {
   static int[] pathsY = {-4, -2, 0, 1};
@@ -46,8 +47,10 @@ public class Path {
   }*/
 
   public static void main(String[] args) {
-    for (int i = 0; i < 400; i++) {
+    long start_time = System.nanoTime();
+    for (int i = 0; i < 10000; i++) {
       System.out.println("Step " + i + ": " + calculatePathNumbers(i));
     }
+    System.out.println((System.nanoTime() - start_time)/1000000);
   }
 }
