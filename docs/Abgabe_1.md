@@ -5,6 +5,47 @@ Sergej Bakanow, Denis Troccolo, Anselm Koch, Robin Schüle, Marvin Simon
 
 ## Aufgabe 1
 
+1. Da jede Würfelseite die gleiche Chance hat oben zu landen und wir 6 Würfelseiten haben, 
+hat jede Würfelseite eine Wahrscheinlichkeit von 1/6 (~16,66%) oben zu landen. Um die´Stärke der Würfel zu bestimmen
+lassen wir jeweils 2 Würfel gegeneinander antreten und bestimmen die Wahrscheinlichkeit des Sieges.
+
+    ### Vergleich Würfel A und Wüfel B
+
+    A würfelt 5, B Wurf ist egal, da B keine Zahl >= 5 hat: A gewinnt mit der Wahrscheinlichkeit 3 * 1/6 = 1/2 ~50%
+    A würfelt 4, B würfelt 3: A gewinnt mit der Wahrscheinlichkeit  (1 * 1/6) * (3 * 1/6) = 1/12 ~ 8,33%
+    A würfelt 1, B Wurf ist egal, da B keine Zahl <= 1 hat: A verliert mit der Wahrscheinlichkeit (2 * 1/6) * (6 * 1/6) = 1/3 ~33,33%
+    A und B trennen sich unentschieden wenn A und B eine 4 würfeln: Unentschieden mit der Wahrscheinlichkeit (1 * 1/6) * (3 * 1/6) = 1/12 ~8,33%
+    
+    ### Vergleich Würfel C und Würfel D
+    
+    C würfelt 6, D würfelt 2 oder 3: C gewinnt mit der Wahrscheinlichkeit (3 * 1/6) * (4 * 1/6) = 1/3 ~33,33%
+    C würfelt 1, D Wurf ist egal, da D keine Zahl <= 1 hat: C verliert mit der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
+    C und D trennen sich unentschieden wenn C und D eine 6 würfeln: Unentschieden mit der Wahrscheinlickeit (3 * 1/6) * (2 * 1/6) = 1/6 ~16,66%
+    
+    ### Vergleich Würfel A und Würfel D
+    
+    A würfelt 4 oder 5, D würfelt 2 oder 3: A gewinnt mit der Wahrscheinlichkeit (4 * 1/6) * (4 * 1/6) = 4/9 44,44%
+    A würfelt 1, D Wurf ist egal, da D keine Zahl <= 1 hat: A verliert mit der Wahrscheinlichkeit (2 * 1/6) * (6 * 1/6) = 1/3 ~ 33,33%
+    A würfelt 4 oder 5, D würfelt 6: A verliert mit der Wahrscheinlichkeit (4 * 1/6) * (2 * 1/6) = 2/9 ~ 22,22%
+    
+    ### Vergleich Würfel B und Würfel C
+    
+    C würfelt 1, B Wurf ist egal, da B keine Zahl <= 1 hat: C verliert mit der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
+    C würfelt 6, B Wurf ist egal, da B keine Zahl >= 6 hat: C gewinnt mit der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
+    
+    Daraus ergibt sich die Reihenfolge: D -> A -> B = C
+
+
+2. ### Vergleich Würfel A und normaler Würfel
+    
+    A würfelt 1, normaler Würfel würfelt 2,3,4,5 oder 6: A verliert mit der Wahrscheinlichkeit (2 * 1/6) * (5 * 1/6) = 5/18 ~27,77%
+    A würfelt 4 oder 5, normaler Würfel würfelt 6: A verliert mit der Wahrscheinlichkeit (4 * 1/6) * (1 * 1/6) = 1/9 = 11,11%
+    A würfelt 4, normaler Würfel würfelt 5: A verliert mit der Wahrscheinlichkeit (1 * 1/6) * (1 * 1/6) = 1/36 ~2,77%
+    A würfelt 4 oder 5, normaler Würfel würfelt 1,2 oder 3: A gewinnt mit der Wahrscheinlichkeit (4 * 1/6) * (3 * 1/6) = 1/3 = 33,33%
+    A würfelt 5, normaler Würfel würfelt 4: A gewinnt mit der Wahrscheinlichkeit (3 * 1/6) * (1 * 1/6) = 3/36 ~8,33%
+    A und normaler Würfel trennen sich unentschieden wenn beide 1, 4 oder 5 würfeln: Unentschieden mit der Wahrscheinlichkeit (2 * 1/6) * (1 * 1/6) + (1 * 1/6) * (1 * 1/6) + (3 * 1/6) * (1 * 1/6) = 1/6 ~16,66%
+
+   
 
 ## Aufgabe 2
 
