@@ -33,20 +33,20 @@ lassen wir jeweils 2 Würfel gegeneinander antreten und bestimmen die Wahrschein
     C würfelt 1, B Wurf ist egal, da B keine Zahl <= 1 hat: C verliert mit der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
     C würfelt 6, B Wurf ist egal, da B keine Zahl >= 6 hat: C gewinnt mit der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
     
-    Daraus ergibt sich die Reihenfolge: D -> A -> B = C
+    **Daraus ergibt sich die Reihenfolge: D -> A -> B = C**
 
 
 2. ### Vergleich Würfel A und normaler Würfel
-    ![Dice_A_vs_Normal](img/Dice_A_vs_Normal.png)
-    
+    ![Dice_A_vs_Normal](img/Abgabe_1/Dice_A_vs_Normal.png)
+
     ### Vergleich Würfel B und normaler Würfel
-    ![Dice_B_vs_Normal](img/Dice_B_vs_Normal.png)
+    ![Dice_B_vs_Normal](img/Abgabe_1/Dice_B_vs_Normal.png)
 
     ### Vergleich Würfel C und normaler Würfel
-    ![Dice_C_vs_Normal](img/Dice_C_vs_Normal.png)
+    ![Dice_C_vs_Normal](img/Abgabe_1/Dice_C_vs_Normal.png)
 
     ### Vergleich Würfel D und normaler Würfel
-    ![Dice_D_vs_Normal](img/Dice_D_vs_Normal.png)
+    ![Dice_D_vs_Normal](img/Abgabe_1/Dice_D_vs_Normal.png)
 
 
    
