@@ -134,4 +134,33 @@ Step 99: 9023073552950601695819250958215557785144367188
         print return value
     }
     ```
-3. 
+3. ```
+    function drawPaths(numberOfSteps, currentValue, resultSave): numberOfPaths {
+        if numberOfSteps == 0
+            return currentYValue == 0 ? 1 : 0
+        
+        for(every possible ySteps) {
+            nextValue = currentYValue + yStep;
+            if(nextValue >= 0) {
+                search resultSave for entry
+                if(resultSave no entry) {
+                    call calculatePaths with (steps - 1, nextValue, resultSave)
+                    save the return value in resultSave
+                }
+                if(resultSave entry) {
+                    drawLine from currentvalue to nextValue;
+                }
+            }
+            add result in a local variable
+        }
+        return the local variable which are the possible paths
+    }
+
+
+    main {
+        input steps and call the drawPaths function with an empty map and currentValue 0
+    }
+    ```
+4. n^2
+5. n^2?
+6. PathAnzahl * Steps + 1?

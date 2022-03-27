@@ -46,7 +46,7 @@ public class Path {
   }*/
 
   public static void main(String[] args) {
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 400; i++) {
       System.out.println("Step " + i + ": " + calculatePathNumbers(i));
     }
   }
