@@ -37,13 +37,17 @@ lassen wir jeweils 2 Würfel gegeneinander antreten und bestimmen die Wahrschein
 
 
 2. ### Vergleich Würfel A und normaler Würfel
+    ![Dice_A_vs_Normal](img/Dice_A_vs_Normal.png)
     
-    A würfelt 1, normaler Würfel würfelt 2,3,4,5 oder 6: A verliert mit der Wahrscheinlichkeit (2 * 1/6) * (5 * 1/6) = 5/18 ~27,77%
-    A würfelt 4 oder 5, normaler Würfel würfelt 6: A verliert mit der Wahrscheinlichkeit (4 * 1/6) * (1 * 1/6) = 1/9 = 11,11%
-    A würfelt 4, normaler Würfel würfelt 5: A verliert mit der Wahrscheinlichkeit (1 * 1/6) * (1 * 1/6) = 1/36 ~2,77%
-    A würfelt 4 oder 5, normaler Würfel würfelt 1,2 oder 3: A gewinnt mit der Wahrscheinlichkeit (4 * 1/6) * (3 * 1/6) = 1/3 = 33,33%
-    A würfelt 5, normaler Würfel würfelt 4: A gewinnt mit der Wahrscheinlichkeit (3 * 1/6) * (1 * 1/6) = 3/36 ~8,33%
-    A und normaler Würfel trennen sich unentschieden wenn beide 1, 4 oder 5 würfeln: Unentschieden mit der Wahrscheinlichkeit (2 * 1/6) * (1 * 1/6) + (1 * 1/6) * (1 * 1/6) + (3 * 1/6) * (1 * 1/6) = 1/6 ~16,66%
+    ### Vergleich Würfel B und normaler Würfel
+    ![Dice_B_vs_Normal](img/Dice_B_vs_Normal.png)
+
+    ### Vergleich Würfel C und normaler Würfel
+    ![Dice_C_vs_Normal](img/Dice_C_vs_Normal.png)
+
+    ### Vergleich Würfel D und normaler Würfel
+    ![Dice_D_vs_Normal](img/Dice_D_vs_Normal.png)
+
 
    
 
