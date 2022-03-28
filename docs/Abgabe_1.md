@@ -6,9 +6,7 @@ Sergej Bakanow, Denis Troccolo, Anselm Koch, Robin Schüle, Marvin Simon
 ## Aufgabe 1
 
 ### 1. 
-Da jede Würfelseite die gleiche Chance hat oben zu landen und wir 6 Würfelseiten haben, 
-hat jede Würfelseite eine Wahrscheinlichkeit von 1/6 (~16,66%) oben zu landen. Um die Stärke der Würfel zu bestimmen
-lassen wir jeweils 2 Würfel gegeneinander antreten und bestimmen die Wahrscheinlichkeit des Sieges. Unentschieden werden
+Da jede Würfelseite die gleiche Chance hat oben zu landen und wir 6 Würfelseiten haben, hat jede Würfelseite eine Wahrscheinlichkeit von 1/6 (~16,66%) oben zu landen. Um die Stärke der Würfel zu bestimmen lassen wir jeweils 2 Würfel gegeneinander antreten und bestimmen die Wahrscheinlichkeit des Sieges. Unentschieden werden
 in der Wahrscheinlichkeitsberechnung nicht mit einbezogen, da bei einem Unentschieden einfach wieder neu gewürfelt wird.
 
 ### Vergleich Würfel A und Würfel B
