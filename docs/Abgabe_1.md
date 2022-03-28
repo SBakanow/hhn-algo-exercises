@@ -58,11 +58,12 @@ Wie im Bild zu sehen hat Würfel B eine Wahrscheinlichkeit von 7/11 = ~ 63,63% u
 
 **Ergebnis: B > D**
 
-Wenn wir uns jetzt die Häufigkeiten der Siege eines Würfels gegen alle anderen Würfel anschauen ergibt sich, dass
-Würfel D gegen 2 Würfel gewinnt (A und C) und 1 mal verliert (B)
-Würfel B gewinnt gegen 1 Würfel (D), verliert gegen 1 Würfel (A) und trennt sich 1 mal unentschieden (C)
-Würfel C gewinnt gegen 1 Würfel (A), verliert gegen 1 Würfel (D) und trennt sich 1 mal unentschieden (B)
-Würfel A gewinnt gegen 1 Würfel (B) und verliert gegen 2 Würfel (C und D)
+Wenn wir uns jetzt die Häufigkeiten der Siege eines Würfels gegen alle anderen Würfel anschauen ergibt sich, dass:
+
+- Würfel D gegen 2 Würfel gewinnt (A und C) und 1 mal verliert (B).
+- Würfel B gewinnt gegen 1 Würfel (D), verliert gegen 1 Würfel (A) und trennt sich 1 mal unentschieden (C).
+- Würfel C gewinnt gegen 1 Würfel (A), verliert gegen 1 Würfel (D) und trennt sich 1 mal unentschieden (B).
+- Würfel A gewinnt gegen 1 Würfel (B) und verliert gegen 2 Würfel (C und D).
 
 **Daraus ergibt sich die Reihenfolge (von schwach zu stark): A -> B = C -> D**
 
