@@ -7,60 +7,95 @@ Sergej Bakanow, Denis Troccolo, Anselm Koch, Robin Schüle, Marvin Simon
 
 ### 1. 
 Da jede Würfelseite die gleiche Chance hat oben zu landen und wir 6 Würfelseiten haben, 
-hat jede Würfelseite eine Wahrscheinlichkeit von 1/6 (~16,66%) oben zu landen. Um die´Stärke der Würfel zu bestimmen
-lassen wir jeweils 2 Würfel gegeneinander antreten und bestimmen die Wahrscheinlichkeit des Sieges.
+hat jede Würfelseite eine Wahrscheinlichkeit von 1/6 (~16,66%) oben zu landen. Um die Stärke der Würfel zu bestimmen
+lassen wir jeweils 2 Würfel gegeneinander antreten und bestimmen die Wahrscheinlichkeit des Sieges. Unentschieden werden
+in der Wahrscheinlichkeitsberechnung nicht mit einbezogen, da bei einem Unentschieden einfach wieder neu gewürfelt wird.
 
-### Vergleich Würfel A und Wüfel B
-A würfelt 5, B Wurf ist egal, da B keine Zahl >= 5 hat: A gewinnt mit
-der Wahrscheinlichkeit 3 * 1/6 = 1/2 ~50%
-A würfelt 4, B würfelt 3: A gewinnt mit der Wahrscheinlichkeit  (1 * 1
-6) * (3 * 1/6) = 1/12 ~ 8,33%
-A würfelt 1, B Wurf ist egal, da B keine Zahl <= 1 hat: A verliert mit
-der Wahrscheinlichkeit (2 * 1/6) * (6 * 1/6) = 1/3 ~33,33%
-A und B trennen sich unentschieden wenn A und B eine 4 würfeln:
-Unentschieden mit der Wahrscheinlichkeit (1 * 1/6) * (3 * 1/6) = 1/12
-~8,33%
+### Vergleich Würfel A und Würfel B
+![DiceA_vs_DiceB](img/Abgabe_1/DiceA_vs_DiceB.png)
 
-### Vergleich Würfel C und Würfel D
-C würfelt 6, D würfelt 2 oder 3: C gewinnt mit der Wahrscheinlichkeit
-(3 * 1/6) * (4 * 1/6) = 1/3 ~33,33%
-C würfelt 1, D Wurf ist egal, da D keine Zahl <= 1 hat: C verliert mit
-der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
-C und D trennen sich unentschieden wenn C und D eine 6 würfeln:
-Unentschieden mit der Wahrscheinlickeit (3 * 1/6) * (2 * 1/6) = 1/6 ~16
-66%
+Wie im Bild zu sehen hat Würfel A eine Wahrscheinlichkeit von 7/11 = ~63,63% und Würfel B eine Wahrscheinlichkeit von
+4/11 = ~36,36% zu gewinnen.
+
+**Ergebnis: A > B**
+
+### Vergleich Würfel A und Würfel C
+![DiceA_vs_DiceB](img/Abgabe_1/DiceA_vs_DiceC.png)
+
+Wie im Bild zu sehen hat Würfel A eine Wahrscheinlichkeit von 4/10 = 40% und Würfel C eine Wahrscheinlichkeit von
+3/5 = 60% zu gewinnnen. 
+
+**Ergebnis: C > A**
 
 ### Vergleich Würfel A und Würfel D
+![DiceA_vs_DiceB](img/Abgabe_1/DiceA_vs_DiceD.png)
 
-A würfelt 4 oder 5, D würfelt 2 oder 3: A gewinnt mit der
-Wahrscheinlichkeit (4 * 1/6) * (4 * 1/6) = 4/9 44,44%
-A würfelt 1, D Wurf ist egal, da D keine Zahl <= 1 hat: A verliert mit
-der Wahrscheinlichkeit (2 * 1/6) * (6 * 1/6) = 1/3 ~ 33,33%
-A würfelt 4 oder 5, D würfelt 6: A verliert mit der Wahrscheinlichkeit 
-(4 * 1/6) * (2 * 1/6) = 2/9 ~ 22,22%
-### Vergleich Würfel B und Würfel C
-C würfelt 1, B Wurf ist egal, da B keine Zahl <= 1 hat: C verliert mit
-der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
-C würfelt 6, B Wurf ist egal, da B keine Zahl >= 6 hat: C gewinnt mit
-der Wahrscheinlichkeit (3 * 1/6) * (6 * 1/6) = 1/2 ~50%
+Wie im Bild zu sehen hat Würfel A eine Wahrscheinlichkeit von 4/9 = ~44,44% und Würfel D eine Wahrscheinlichkeit von
+5/9 = ~55,55% zu gewinnen.
 
-**Daraus ergibt sich die Reihenfolge: D -> A -> B = C**
+**Ergebnis: D > A**
+
+### Vergleich Würfel C und Würfel D
+![DiceA_vs_DiceB](img/Abgabe_1/DiceC_vs_DiceD.png)
+
+Wie im Bild zu sehen hat Würfel C eine Wahrscheinlichkeit von 4/10 = 40% und Würfel D eine Wahrscheinlichkeit von
+3/5 = 60% zu gewinnen. 
+
+**Ergebnis: D > C**
+
+### Vergleich Würfel C und Würfel B
+![DiceA_vs_DiceB](img/Abgabe_1/DiceC_vs_DiceB.png)
+
+Wie im Bild zu sehen haben Würfel C und Würfel B beide eine Wahrscheinlichkeit von 1/2 = 50% zu gewinnen.
+
+**Ergebnis: C = B**
+
+### Vergleich Würfel B und Würfel D
+![DiceA_vs_DiceB](img/Abgabe_1/DiceB_vs_DiceD.png)
+
+Wie im Bild zu sehen hat Würfel B eine Wahrscheinlichkeit von 7/11 = ~ 63,63% und Würfel D eine Wahrscheinlichkeit von
+4/11 = ~36,36% zu gewinnen.
+
+**Ergebnis: B > D**
+
+Wenn wir uns jetzt die Häufigkeiten der Siege eines Würfels gegen alle anderen Würfel anschauen ergibt sich, dass:
+
+- Würfel D gegen 2 Würfel gewinnt (A und C) und 1 mal verliert (B).
+- Würfel B gewinnt gegen 1 Würfel (D), verliert gegen 1 Würfel (A) und trennt sich 1 mal unentschieden (C).
+- Würfel C gewinnt gegen 1 Würfel (A), verliert gegen 1 Würfel (D) und trennt sich 1 mal unentschieden (B).
+- Würfel A gewinnt gegen 1 Würfel (B) und verliert gegen 2 Würfel (C und D).
+
+**Daraus ergibt sich die Reihenfolge (von schwach zu stark): A -> B = C -> D**
 
 
 ### 2. Vergleich Würfel A und normaler Würfel
     
-![Dice_A_vs_Normal](img/Abgabe_1/Dice_A_vs_Normal.png)
+![Dice_A_vs_Normal](img/Abgabe_1/DiceA_vs_normal.png)
+
+Beide Würfel haben eine 50% Wahrscheinlichkeit zu gewinnen.
+
+**Ergebnis: A = normaler Würfel**
 
 ### Vergleich Würfel B und normaler Würfel
-![Dice_B_vs_Normal](img/Abgabe_1/Dice_B_vs_Normal.png)
+![Dice_B_vs_Normal](img/Abgabe_1/DiceB_vs_normal.png)
+
+Beide Würfel haben eine 50% Wahrscheinlichkeit zu gewinnen.
+
+**Ergebnis: B = normaler Würfel**
 
 ### Vergleich Würfel C und normaler Würfel
-![Dice_C_vs_Normal](img/Abgabe_1/Dice_C_vs_Normal.png)
+![Dice_C_vs_Normal](img/Abgabe_1/DiceC_vs_normal.png)
+
+Beide Würfel haben eine 50% Wahrscheinlichkeit zu gewinnen.
+
+**Ergebnis: C = normaler Würfel**
 
 ### Vergleich Würfel D und normaler Würfel
-![Dice_D_vs_Normal](img/Abgabe_1/Dice_D_vs_Normal.png)
+![Dice_D_vs_Normal](img/Abgabe_1/DiceD_vs_normal.png)
 
+Beide Würfel haben eine 50% Wahrscheinlichkeit zu gewinnen.
 
+**Ergebnis: D = normaler Würfel**
    
 
 ## Aufgabe 2
