@@ -72,16 +72,30 @@ Wenn wir uns jetzt die Häufigkeiten der Siege eines Würfels gegen alle anderen
     
 ![Dice_A_vs_Normal](img/Abgabe_1/DiceA_vs_normal.png)
 
+Beide Würfel haben eine 50% Wahrscheinlichkeit zu gewinnen.
+
+**Ergebnis: A = normaler Würfel**
+
 ### Vergleich Würfel B und normaler Würfel
 ![Dice_B_vs_Normal](img/Abgabe_1/DiceB_vs_normal.png)
+
+Beide Würfel haben eine 50% Wahrscheinlichkeit zu gewinnen.
+
+**Ergebnis: B = normaler Würfel**
 
 ### Vergleich Würfel C und normaler Würfel
 ![Dice_C_vs_Normal](img/Abgabe_1/DiceC_vs_normal.png)
 
+Beide Würfel haben eine 50% Wahrscheinlichkeit zu gewinnen.
+
+**Ergebnis: C = normaler Würfel**
+
 ### Vergleich Würfel D und normaler Würfel
 ![Dice_D_vs_Normal](img/Abgabe_1/DiceD_vs_normal.png)
 
+Beide Würfel haben eine 50% Wahrscheinlichkeit zu gewinnen.
 
+**Ergebnis: D = normaler Würfel**
    
 
 ## Aufgabe 2
