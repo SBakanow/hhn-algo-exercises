@@ -1,5 +1,6 @@
 package abgabe.aufgabe1;
 
+import java.awt.SystemTray;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Timer;
@@ -8,7 +9,17 @@ public class Path {
   static int[] pathsY = {-4, -2, 0, 1};
 
   static BigInteger calculatePathNumbers(int steps) {
-    return recursiveCall2(steps, 0, new HashMap<>());
+    HashMap <Long, BigInteger> map = new HashMap<>();
+    int counter = 1;
+    var res =  recursiveCall2(steps, 0, map);
+    System.out.println("Steps: " + steps +"; Map length: " + map.size());
+    for (var values: map.values()) {
+      if (values.intValue() != 0) {
+        counter++;
+      }
+    }
+    System.out.println("Counter: " + counter);
+    return res;
   }
 
   static BigInteger recursiveCall2(int steps, long currentYValue, HashMap<Long, BigInteger> map) {
@@ -48,9 +59,8 @@ public class Path {
 
   public static void main(String[] args) {
     long start_time = System.nanoTime();
-    for (int i = 0; i < 10000; i++) {
+    for (int i = 0; i < 100; i++) {
       System.out.println("Step " + i + ": " + calculatePathNumbers(i));
     }
-    System.out.println((System.nanoTime() - start_time)/1000000);
   }
 }
