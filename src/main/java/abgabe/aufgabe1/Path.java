@@ -59,8 +59,8 @@ public class Path {
 
   public static void main(String[] args) {
     long start_time = System.nanoTime();
-    for (int i = 0; i < 100; i++) {
-      System.out.println("Step " + i + ": " + calculatePathNumbers(i));
+    for (int i = 0; i < 1; i++) {
+      System.out.println("Step " + i + ": " + calculatePathNumbers(10));
     }
   }
 }
