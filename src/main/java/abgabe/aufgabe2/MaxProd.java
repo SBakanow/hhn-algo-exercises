@@ -18,7 +18,7 @@ public final class MaxProd {
 
     int indexStart = indexEnd;
     for (double i = 1.0; i < bisMax; --indexStart) {
-        i *= inputs[indexStart];
+      i *= inputs[indexStart];
       if (i >= bisMax) {
         break;
       }
