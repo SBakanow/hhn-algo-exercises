@@ -27,11 +27,12 @@ public final class MaxProd {
     for (int i = indexStart; i <= indexEnd; ++i) {
       System.out.println(inputs[i]);
     }
-    System.out.println(indexStart + " " + indexEnd);
     return bisMax;
   }
 
   public static void main(String[] args) {
-    System.out.println(maxProd(new double[] {1.0, -2.0, -2.0, 1.5}));
+    long startTime = System.nanoTime();
+    System.out.println("Max product: " + maxProd(new double[] {1.0, -2.0, -2.0, 1.5, -1.0, 3.0, 3.0}));
+    System.out.println("Execution Time: " + (System.nanoTime() - startTime)/1000000 + "ms");
   }
 }
