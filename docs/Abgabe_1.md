@@ -251,6 +251,6 @@ Step 99: 9023073552950601695819250958215557785144367188
         input steps and call the drawPaths function with an empty map and currentValue 0
     }
     ```
-4. A = B: O(4*n)
+4. A = B: O(n+(n*(n+1))/2)
 5. A = B: O(n+(n*(n+1))/2)
 6. UniqueGridPoints = (Sum(map.values != 0)) + 1;
