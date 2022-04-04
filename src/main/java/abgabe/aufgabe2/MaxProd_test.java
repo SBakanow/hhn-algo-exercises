@@ -1,5 +1,7 @@
 package abgabe.aufgabe2;
 
+import java.util.Scanner;
+
 public final class MaxProd_test {
 
   public static double maxProd(final double[] inputs) {
@@ -40,7 +42,16 @@ public final class MaxProd_test {
 
   public static void main(String[] args) {
     long startTime = System.nanoTime();
-    System.out.println("Max product: " + maxProd(new double[] {0, -2.0, -2.0, 1.5, -1.0, 3.0, 3.0}));
-    System.out.println("Execution Time: " + (System.nanoTime() - startTime)/1000000 + "ms");
+    Scanner input = new Scanner(System.in);
+    if (input.hasNextLine()) {
+      String line = input.nextLine();
+      String[] array = line.split("\\s+");
+      double[] values = new double[array.length];
+      for (int i = 0; i < array.length; i++) {
+        values[i] = Double.parseDouble(array[i]);
+      }
+      System.out.println("Max product: " + maxProd(values));
+    }
+    System.out.println("Execution Time: " + (System.nanoTime() - startTime) / 1000000 + "ms");
   }
 }
