@@ -1,48 +1,75 @@
 package abgabe.aufgabe2;
 
+import java.util.Scanner;
+
+/**
+ * Lösung Übung 2 der Vorlesung Algorithmen und Datenstrukturen.
+ * Das Programm MaxProd nimmt eine beliebige Folge von reellen Zahlen entgegen, bestimmt und gibt
+ * eine aufeinanderfolgende Teilfolge darin aus, welche das maximal Produkt liefert. Das maximale
+ * Produkt wird am Ende auch mit ausgegeben.
+ *
+ * @author Denis Troccolo, Anselm Koch, Robin Schüle, Marvin Simon, Sergej Bakanow
+ */
 public final class MaxProd {
 
-  /*
-    Input: A[] = { 6, -3, -10, 0, 2 }
-    Output: 180  // The subarray is {6, -3, -10}
+  public static void main(String[] args) {
+    // Einlesen der Zahlenfolge aus der Konsole getrennt durch Leerzeichen.
+    Scanner scanner = new Scanner(System.in);
+    if (scanner.hasNextLine()) {
+      String line = scanner.nextLine();
+      String[] lineArray = line.split("\\s+");
+      double[] values = new double[lineArray.length];
+      for (int i = 0; i < lineArray.length; i++) {
+        values[i] = Double.parseDouble(lineArray[i]);
+      }
+      System.out.println("Max product: " + maxProd(values));
+    }
+  }
 
-    Input: A[] = {-1, -3, -10, 0, 60 }
-    Output: 60  // The subarray is {60}
-
-    Input: A[] = { -2, -3, 0, -2, -40 }
-    Output: 80  // The subarray is {-2, -40}
+  /**
+   * Die eigentliche Methode zur Bestimmung des maximalen Produkts, sowie der dazugehörigen
+   * Teilfolge.
+   *
+   * @param inputs Array aus Double Zahlen.
+   * @return Liefert das maximale Produkt der Zahlenfolge.
    */
   public static double maxProd(final double[] inputs) {
-    double scanMax = 1.0;
-    double bisMax = 1.0;
+    double maxProduct = inputs[0];
+    double minProduct = inputs[0];
+    double result = inputs[0];
     int indexEnd = 0;
 
-    for (int i = 0; i < inputs.length; ++i) {
-      scanMax *= inputs[i];
-
-      if (bisMax < scanMax) {
-        bisMax = scanMax;
+    // Schleife zur Bestimmung des maximalen Produkts und des Index der letzten Zahl der Teilfolge.
+    for (int i = 1; i < inputs.length; i++) {
+      double temp =
+          Math.max(Math.max(inputs[i], inputs[i] * maxProduct), inputs[i] * minProduct);
+      minProduct =
+          Math.min(Math.min(inputs[i], inputs[i] * maxProduct), inputs[i] * minProduct);
+      maxProduct = temp;
+      if (result < maxProduct) {
+        result = maxProduct;
         indexEnd = i;
       }
     }
 
+    // Schleife zur Bestimmung des Index der ersten Zahl der Teilfolge
     int indexStart = indexEnd;
-    for (double i = 1.0; i < bisMax; --indexStart) {
+    for (double i = 1.0; i < result; --indexStart) {
       i *= inputs[indexStart];
-      if (i >= bisMax) {
+      if (i >= result) {
         break;
       }
     }
 
+    // Erzeugung des Strings zur Ausgabe der Teilfolge, sowie des maximalen Produkts.
+    StringBuilder subarray = new StringBuilder();
+    subarray.append("Teilfolge: [");
     for (int i = indexStart; i <= indexEnd; ++i) {
-      System.out.println(inputs[i]);
+      subarray.append(inputs[i]).append(", ");
     }
-    return bisMax;
-  }
+    String arrayString = subarray.substring(0, subarray.length() - 2);
+    System.out.print(arrayString + "]\n");
 
-  public static void main(String[] args) {
-    long startTime = System.nanoTime();
-    System.out.println("Max product: " + maxProd(new double[] {1.0, -2.0, -2.0, 1.5, -1.0, 3.0, 3.0}));
-    System.out.println("Execution Time: " + (System.nanoTime() - startTime)/1000000 + "ms");
+    return result;
   }
 }
