@@ -1,7 +1,5 @@
 package abgabe.aufgabe2;
 
-import java.util.Scanner;
-
 /**
  * Lösung Übung 2 der Vorlesung Algorithmen und Datenstrukturen.
  * Das Programm MaxProd nimmt eine beliebige Folge von reellen Zahlen entgegen, bestimmt und gibt
@@ -13,17 +11,12 @@ import java.util.Scanner;
 public final class MaxProd {
 
   public static void main(String[] args) {
-    // Einlesen der Zahlenfolge aus der Konsole getrennt durch Leerzeichen.
-    Scanner scanner = new Scanner(System.in);
-    if (scanner.hasNextLine()) {
-      String line = scanner.nextLine();
-      String[] lineArray = line.split("\\s+");
-      double[] values = new double[lineArray.length];
-      for (int i = 0; i < lineArray.length; i++) {
-        values[i] = Double.parseDouble(lineArray[i]);
-      }
-      System.out.println("Max product: " + maxProd(values));
+    double[] values = new double[args.length];
+    for (int i = 0; i < args.length; i++) {
+      values[i] = Double.parseDouble(args[i]);
     }
+    System.out.println("Max product: " + maxProd(values));
+    System.out.println("Laufzeit O(n)");
   }
 
   /**
@@ -41,10 +34,8 @@ public final class MaxProd {
 
     // Schleife zur Bestimmung des maximalen Produkts und des Index der letzten Zahl der Teilfolge.
     for (int i = 1; i < inputs.length; i++) {
-      double temp =
-          Math.max(Math.max(inputs[i], inputs[i] * maxProduct), inputs[i] * minProduct);
-      minProduct =
-          Math.min(Math.min(inputs[i], inputs[i] * maxProduct), inputs[i] * minProduct);
+      double temp = Math.max(Math.max(inputs[i], inputs[i] * maxProduct), inputs[i] * minProduct);
+      minProduct = Math.min(Math.min(inputs[i], inputs[i] * maxProduct), inputs[i] * minProduct);
       maxProduct = temp;
       if (result < maxProduct) {
         result = maxProduct;
