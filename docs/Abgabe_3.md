@@ -64,6 +64,50 @@ A + Cx^2 + Bx^4
 9 Koeffizienten Multiplikationen werden benötigt.
 Jede Teilaufgabe vollzieht 3 Multiplikationen.
 
-
 ## Aufgabe 2
-###
+
+### Aufgabe 2.1
+
+= 2 * T(n/4) + √n
+= log4(2) + √n
+= n^1/2 + n^1/2
+= n^1/2 == n^1/2
+
+θ(√n * log(n))
+
+### Aufagbe 2.2
+
+4 * T(n/2) + nlog(n)
+= log2(4) + nlog(n)
+= n^2 + nlog(n)
+n^2 > nlog(n)
+θ(n^2)
+
+### Aufgabe 2.3
+
+3 * T(n/3) + nlog(n)
+= log3(3) + nlog(n)
+= 1 + nlog(n)
+n == nlog(n)
+θ(n)
+
+### Aufgabe 2.4
+
+2 * T(n − 1) + n
+= a > 1
+
+θ(n*2^n)
+
+### Aufgabe 2.5
+
+T(n − 1) + 2
+= a == 1
+
+θ(n)
+
+### Aufgabe 2.6
+
+T(n − 1) + n^2 + 1
+= a == 1
+
+θ(n^3)
