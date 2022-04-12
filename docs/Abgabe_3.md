@@ -37,6 +37,7 @@ ALGesamt(x) + ARGesamt(x) + ((Al(x)) x (Bl(x)) - ALGesamt(x) - ARGesamt(x))
 A = (6 + 17x + 12x^2)
 
 Teil 2:
+Ar(x) * Br(x)
 Arl(x) = 1
 Arr(x) = 2x
 Brl(x) = 2
@@ -48,7 +49,6 @@ BLGesamt(x) + BRGesamt(x) + ((Ar(x)) x (Br(x)) - BLGesamt(x) - BRGesamt(x))
 B = 2 + 6x^2 + 7x
 
 Teil 3:
-
 (Al(x) + Ar(x)) x (Bl(x) + Br(x)) - A - B
 (3 + 5x) x (5 + 7x) - (6 + 17x + 12x^2) - (2 + 6x^2 + 7x)
 = (15 + 46x + 35x^2) - (6 + 17x + 12x^2) - (2 + 6x^2 + 7x)
@@ -80,6 +80,7 @@ Jede Teilaufgabe vollzieht 3 Multiplikationen.
 = log2(4) + nlog(n)
 = n^2 + nlog(n)
 n^2 > nlog(n)
+
 θ(n^2)
 
 ### Aufgabe 2.3
@@ -88,6 +89,7 @@ n^2 > nlog(n)
 = log3(3) + nlog(n)
 = 1 + nlog(n)
 n == nlog(n)
+
 θ(n)
 
 ### Aufgabe 2.4
