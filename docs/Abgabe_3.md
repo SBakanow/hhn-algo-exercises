@@ -39,12 +39,11 @@ A = (6 + 17x + 12x^2)
 Teil 2:
 Arl(x) = 1
 Arr(x) = 2x
-
 Brl(x) = 2
 Brr(x) = 3x
+
 BLGesamt(x) = Arl(x) x Brl(x) = 2
 BRGesamt(x) = Arr(x) x Brr(x) = 6x^2
-
 BLGesamt(x) + BRGesamt(x) + ((Ar(x)) x (Br(x)) - BLGesamt(x) - BRGesamt(x))
 B = 2 + 6x^2 + 7x
 
