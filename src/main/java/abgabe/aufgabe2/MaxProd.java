@@ -27,13 +27,13 @@ public final class MaxProd {
    * @return Liefert das maximale Produkt der Zahlenfolge.
    */
   public static double maxProd(final double[] inputs) {
-    double maxProduct = inputs[0];
-    double minProduct = inputs[0];
-    double result = inputs[0];
+    double maxProduct = 1;
+    double minProduct = 1;
+    double result = 1;
     int indexEnd = 0;
 
     // Schleife zur Bestimmung des maximalen Produkts und des Index der letzten Zahl der Teilfolge.
-    for (int i = 1; i < inputs.length; i++) {
+    for (int i = 0; i < inputs.length; i++) {
       double temp = Math.max(Math.max(inputs[i], inputs[i] * maxProduct), inputs[i] * minProduct);
       minProduct = Math.min(Math.min(inputs[i], inputs[i] * maxProduct), inputs[i] * minProduct);
       maxProduct = temp;
