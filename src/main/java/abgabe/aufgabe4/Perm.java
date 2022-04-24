@@ -1,13 +1,9 @@
 package abgabe.aufgabe4;
 
-import java.util.Arrays;
-
 class Perm extends Thread {
   private int[] a; // a Arbeitsarray
   private int max; // maximaler Index
   private boolean mayread = false; // Kontrolle
-
-  private int lastValue = 0;
 
 
   Perm(int n) { // Konstruktor
@@ -20,18 +16,19 @@ class Perm extends Thread {
   } // end Konstruktor
 
   public void run() {// die Arbeits-Methode
-    perm(0);
+    perm(0, false);
     a = null; // Anzeige, dass fertig
     put(); // ausliefern
   } // end run
 
-  private void perm(int i) { // permutiere ab Index i
+  private void perm(int i, boolean valid) { // permutiere ab Index i
     if (i == max) {
-      put(); // Liefert fertige permutation
+      if(valid)
+        put(); // Liefert fertige permutation
     } else {
       for (int j = i; j <= max; j++) {
         swap(i, j);
-        perm(i + 1);
+        perm(i + 1, validPerm(i+1));
       }
     }
     var h = a[i];
@@ -47,9 +44,29 @@ class Perm extends Thread {
     }
   } // end swap
 
+  private boolean validPerm(int i) {
+    boolean result = true;
+    boolean bigger = true;
+    int lastValue = 0;
+    for (int k = 0; k < i; k++) {
+      var checkValue = Math.abs(a[k] - a[k + 1]);
+      if (bigger) {
+        result = lastValue < checkValue;
+      } else {
+        result = lastValue > checkValue;
+      }
+      if (!result) {
+        break;
+      }
+      bigger = !bigger;
+      lastValue = checkValue;
+    }
+    return result;
+  }
+
   synchronized int[] getNext() { // liefert naechste Permutation
     mayread = false; // a darf geaendert werden
-    notify(); // wecke anderen Thread
+    notifyAll(); // wecke anderen Thread
     try {
       while (!mayread) {
         wait(); // non busy waiting
@@ -61,7 +78,7 @@ class Perm extends Thread {
 
   private synchronized void put() { // uebergebe array
     mayread = true; // a wird gelesen
-    notify(); // wecke anderen Thread
+    notifyAll(); // wecke anderen Thread
     try {
       if (a != null) {
         while (mayread) {
