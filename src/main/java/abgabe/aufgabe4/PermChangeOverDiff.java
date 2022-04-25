@@ -7,6 +7,7 @@ public class PermChangeOverDiff {
   public static void main(String[] arg) {
     System.out.print("Perm Change Over Diff, please input n: ");
     int n = 0;
+    int counter = 0;
     try {
       n = new Scanner(System.in).nextInt();
     } catch (Exception e) {
@@ -16,6 +17,8 @@ public class PermChangeOverDiff {
     int[] c;
     while ((c = p.getNext()) != null) { // Naechste Permutation
      System.out.println(Arrays.toString(c));
+     counter++;
     }
+    System.out.println(counter);
   }
 }

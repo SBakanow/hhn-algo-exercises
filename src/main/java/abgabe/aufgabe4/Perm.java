@@ -28,7 +28,7 @@ class Perm extends Thread {
     } else {
       for (int j = i; j <= max; j++) {
         swap(i, j);
-        perm(i + 1, validPerm(i+1));
+        perm(i + 1, validPerm(i));
       }
     }
     var h = a[i];
@@ -48,7 +48,7 @@ class Perm extends Thread {
     boolean result = true;
     boolean bigger = true;
     int lastValue = 0;
-    for (int k = 0; k < i; k++) {
+    for (int k = 0; k <= i; k++) {
       var checkValue = Math.abs(a[k] - a[k + 1]);
       if (bigger) {
         result = lastValue < checkValue;
