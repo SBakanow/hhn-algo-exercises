@@ -13,6 +13,7 @@ public class PermChangeOverDiff {
     } catch (Exception e) {
       System.exit(1);
     }
+    long time = System.currentTimeMillis();
     Perm p = new Perm(n); // Liefert Permutationen von 0 .. N-1 mit 0 fix
     int[] c;
     while ((c = p.getNext()) != null) { // Naechste Permutation
@@ -20,6 +21,7 @@ public class PermChangeOverDiff {
       counter++;
     }
     System.out.println(counter);
+    System.out.println(System.currentTimeMillis() - time + " ms");
   }
 
 
