@@ -3,6 +3,14 @@ package abgabe.aufgabe4;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Lösung Übung 4 der Vorlesung Algorithmen und Datenstrukturen.
+ * Das Programm PermChangeOverDiff nimmt eine natürliche Zahl n entgegen und gibt alle Permutationen
+ * in aufsteigender Reihenfolge aus, bei denen die absoluten Differenzen zweier aufeinanderfolgenden
+ * Zahlen abwechselnd kleiner und größer werden.
+ *
+ * @author Denis Troccolo, Anselm Koch, Robin Schüle, Marvin Simon, Sergej Bakanow
+ */
 public class PermChangeOverDiff {
   public static void main(String[] arg) {
     System.out.print("Perm Change Over Diff, please input n: ");
