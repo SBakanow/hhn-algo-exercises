@@ -15,21 +15,17 @@ public class PermChangeOverDiff {
     }
     long time = System.currentTimeMillis();
     Perm p = new Perm(n); // Liefert Permutationen von 0 .. N-1 mit 0 fix
-    int[] c;
-    while ((c = p.getNext()) != null) { // Naechste Permutation
-      System.out.println(Arrays.toString(c));
-      counter++;
-    }
-    System.out.println(counter);
+    p.run();
     System.out.println(System.currentTimeMillis() - time + " ms");
   }
 
 
-  static class Perm extends Thread {
+  static class Perm  {
     private int[] a; // a Arbeitsarray
     private final int max; // maximaler Index
     private boolean mayread = false; // Kontrolle
     int k = 0;
+    int counter = 0;
 
     boolean dontPut = true;
 
@@ -39,19 +35,18 @@ public class PermChangeOverDiff {
       for (int i = 0; i <= max; i++) {
         a[i] = i + 1; // a fuellen
       }
-      this.start(); // run-Methode beginnt zu laufen
     } // end Konstruktor
 
     public void run() {// die Arbeits-Methode
       perm(0);
-      a = null; // Anzeige, dass fertig
-      put(); // ausliefern
+      System.out.println(counter);
     } // end run
 
     private void perm(int i) { // permutiere ab Index i
       if (i == max) {
         if (dontPut) {
-          put(); // Liefert fertige permutation
+          System.out.println(Arrays.toString(a));
+          counter++;
         }
       } else {
         for (int j = i; j < a.length; j++) {
