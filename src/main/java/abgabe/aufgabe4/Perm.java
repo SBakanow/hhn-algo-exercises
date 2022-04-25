@@ -2,9 +2,11 @@ package abgabe.aufgabe4;
 
 class Perm extends Thread {
   private int[] a; // a Arbeitsarray
-  private int max; // maximaler Index
+  private final int max; // maximaler Index
   private boolean mayread = false; // Kontrolle
+  int k = 0;
 
+  boolean dontPut = true;
 
   Perm(int n) { // Konstruktor
     a = new int[n]; // Indices: 0 .. n-1
@@ -16,19 +18,26 @@ class Perm extends Thread {
   } // end Konstruktor
 
   public void run() {// die Arbeits-Methode
-    perm(0, false);
+    perm(0);
     a = null; // Anzeige, dass fertig
     put(); // ausliefern
   } // end run
 
-  private void perm(int i, boolean valid) { // permutiere ab Index i
+  private void perm(int i) { // permutiere ab Index i
     if (i == max) {
-      if(valid)
+      if (dontPut) {
         put(); // Liefert fertige permutation
+      }
     } else {
-      for (int j = i; j <= max; j++) {
+      for (int j = i; j < a.length; j++) {
         swap(i, j);
-        perm(i + 1, validPerm(i));
+
+        if (validPerm(i) || i != 1) {
+          if (k != i) {
+            perm(i + 1);
+          }
+        }
+      dontPut = true;
       }
     }
     var h = a[i];
@@ -45,23 +54,24 @@ class Perm extends Thread {
   } // end swap
 
   private boolean validPerm(int i) {
-    boolean result = true;
-    boolean bigger = true;
-    int lastValue = 0;
-    for (int k = 0; k <= i; k++) {
-      var checkValue = Math.abs(a[k] - a[k + 1]);
-      if (bigger) {
-        result = lastValue < checkValue;
+    var checkValue = Math.abs(a[0] - a[1]);
+    this.k = -1;
+    if (checkValue <= 1) {
+      return false;
+    }
+    int x = Math.abs(a[0] - a[1]);
+    for (int k = 1; k < a.length - 1; k++) {
+      if (x > Math.abs(a[k] - a[k + 1]) && (k % 2) == 1) {
+        x = Math.abs(a[k] - a[k + 1]);
+      } else if (x < Math.abs(a[k] - a[k + 1]) && (k % 2) == 0) {
+        x = Math.abs(a[k] - a[k + 1]);
       } else {
-        result = lastValue > checkValue;
-      }
-      if (!result) {
+        this.k = k + 1;
+        dontPut = false;
         break;
       }
-      bigger = !bigger;
-      lastValue = checkValue;
     }
-    return result;
+    return true;
   }
 
   synchronized int[] getNext() { // liefert naechste Permutation
