@@ -7,118 +7,85 @@ public class PermChangeOverDiff {
   public static void main(String[] arg) {
     System.out.print("Perm Change Over Diff, please input n: ");
     int n = 0;
-    int counter = 0;
     try {
       n = new Scanner(System.in).nextInt();
     } catch (Exception e) {
       System.exit(1);
     }
     long time = System.currentTimeMillis();
-    Perm p = new Perm(n); // Liefert Permutationen von 0 .. N-1 mit 0 fix
-    p.run();
+    new Perm(n);
     System.out.println(System.currentTimeMillis() - time + " ms");
   }
 
 
-  static class Perm  {
-    private int[] a; // a Arbeitsarray
-    private final int max; // maximaler Index
-    private boolean mayread = false; // Kontrolle
-    int k = 0;
+  static class Perm {
+    private final int[] permutationArray;
+    private final int maxIndex;
+    int indexAfterFail = 0;
     int counter = 0;
+    boolean noPrint = false;
 
-    boolean dontPut = true;
-
-    Perm(int n) { // Konstruktor
-      a = new int[n]; // Indices: 0 .. n-1
-      max = n - 1; // Maximaler Index
-      for (int i = 0; i <= max; i++) {
-        a[i] = i + 1; // a fuellen
+    Perm(int n) {
+      permutationArray = new int[n];
+      maxIndex = n - 1;
+      for (int i = 0; i <= maxIndex; i++) {
+        permutationArray[i] = i + 1;
       }
-    } // end Konstruktor
+      run();
+    }
 
-    public void run() {// die Arbeits-Methode
+    private void run() {
       perm(0);
       System.out.println(counter);
-    } // end run
+    }
 
-    private void perm(int i) { // permutiere ab Index i
-      if (i == max) {
-        if (dontPut) {
-          System.out.println(Arrays.toString(a));
+    private void perm(int i) {
+      if (i == maxIndex) {
+        if (!noPrint) {
+          System.out.println(Arrays.toString(permutationArray));
           counter++;
         }
       } else {
-        for (int j = i; j < a.length; j++) {
+        for (int j = i; j < permutationArray.length; j++) {
           swap(i, j);
-
-          if (validPerm(i) || i != 1) {
-            if (k != i) {
-              perm(i + 1);
-            }
+          if ((validPerm() || i != 1) && indexAfterFail != i) {
+            perm(i + 1);
           }
-          dontPut = true;
+          noPrint = false;
         }
       }
-      var h = a[i];
-      System.arraycopy(a, i + 1, a, i, max - i);
-      a[max] = h;
-    } // end perm
+      var helperVariable = permutationArray[i];
+      System.arraycopy(permutationArray, i + 1, permutationArray, i, maxIndex - i);
+      permutationArray[maxIndex] = helperVariable;
+    }
 
-    private void swap(int i, int j) { // tausche a[i] <-> a[j]
+    private void swap(int i, int j) {
       if (i != j) {
-        int h = a[i];
-        a[i] = a[j];
-        a[j] = h;
+        int helperVariable = permutationArray[i];
+        permutationArray[i] = permutationArray[j];
+        permutationArray[j] = helperVariable;
       }
-    } // end swap
+    }
 
-    private boolean validPerm(int i) {
-      var checkValue = Math.abs(a[0] - a[1]);
-      this.k = -1;
-      if (checkValue <= 1) {
+    private boolean validPerm() {
+      var checkValue = Math.abs(permutationArray[0] - permutationArray[1]);
+      this.indexAfterFail = -1;
+      if (checkValue <= 1) { //Check
         return false;
       }
-      int x = Math.abs(a[0] - a[1]);
-      for (int k = 1; k < a.length - 1; k++) {
-        if (x > Math.abs(a[k] - a[k + 1]) && (k % 2) == 1) {
-          x = Math.abs(a[k] - a[k + 1]);
-        } else if (x < Math.abs(a[k] - a[k + 1]) && (k % 2) == 0) {
-          x = Math.abs(a[k] - a[k + 1]);
+      for (int i = 1; i < permutationArray.length - 1; i++) {
+        var compareValue = Math.abs(permutationArray[i] - permutationArray[i + 1]);
+        if (checkValue > compareValue && (i % 2) == 1) {
+          checkValue = Math.abs(permutationArray[i] - permutationArray[i + 1]);
+        } else if (checkValue < compareValue && (i % 2) == 0) {
+          checkValue = Math.abs(permutationArray[i] - permutationArray[i + 1]);
         } else {
-          this.k = k + 1;
-          dontPut = false;
+          this.indexAfterFail = i + 1;
+          noPrint = true;
           break;
         }
       }
       return true;
     }
-
-    synchronized int[] getNext() { // liefert naechste Permutation
-      mayread = false; // a darf geaendert werden
-      notifyAll(); // wecke anderen Thread
-      try {
-        while (!mayread) {
-          wait(); // non busy waiting
-        }
-      } catch (InterruptedException e) {
-      }
-      return a; // liefere Permutationsarray
-    } // end getNext
-
-    private synchronized void put() { // uebergebe array
-      mayread = true; // a wird gelesen
-      notifyAll(); // wecke anderen Thread
-      try {
-        if (a != null) {
-          while (mayread) {
-            wait(); // non busy waiting
-          }
-        }
-      } catch (InterruptedException e) {
-      }
-    } // end put
   }
-
-
 }
