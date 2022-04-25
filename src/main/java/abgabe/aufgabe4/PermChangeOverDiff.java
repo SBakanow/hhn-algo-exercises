@@ -22,7 +22,7 @@ public class PermChangeOverDiff {
     }
     long time = System.currentTimeMillis();
     new Perm(n);
-    System.out.println(System.currentTimeMillis() - time + " ms");
+    System.out.println("Runtime: " + (System.currentTimeMillis() - time) + " ms");
   }
 
 
@@ -44,7 +44,8 @@ public class PermChangeOverDiff {
 
     private void run() {
       perm(0);
-      System.out.println(counter);
+      System.out.println("Mit n=" + maxIndex + " gibt es " + counter +
+          " Permutationen, welche die Voraussetzung erfüllen");
     }
 
     private void perm(int i) {
