@@ -44,7 +44,7 @@ public class PermChangeOverDiff {
 
     private void run() {
       perm(0);
-      System.out.println("Mit n=" + maxIndex + " gibt es " + counter +
+      System.out.println("Mit n = " + (maxIndex + 1) + " gibt es " + counter +
           " Permutationen, welche die Voraussetzung erfüllen");
     }
 
