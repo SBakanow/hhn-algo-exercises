@@ -2,6 +2,8 @@ package abgabe.aufgabe4;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Lösung Übung 4 der Vorlesung Algorithmen und Datenstrukturen.
@@ -13,6 +15,7 @@ import java.util.Scanner;
  */
 public class PermChangeOverDiff {
   public static void main(String[] arg) {
+
     System.out.print("Perm Change Over Diff, please input n: ");
     int n = 0;
     try {
@@ -24,6 +27,7 @@ public class PermChangeOverDiff {
     new Perm(n);
     System.out.println("Runtime: " + (System.currentTimeMillis() - time) + " ms");
   }
+
 
 
   static class Perm {
@@ -51,7 +55,8 @@ public class PermChangeOverDiff {
     private void perm(int i) {
       if (i == maxIndex) {
         if (!noPrint) {
-          System.out.println(Arrays.toString(permutationArray));
+          //System.out.println(Arrays.toString(permutationArray));
+          Logger.getLogger("Test").log(Level.INFO, Arrays.toString(permutationArray));
           counter++;
         }
       } else {
