@@ -43,16 +43,19 @@ Der Grenzwert nähert sich 1,71828 an, was ungefähr e-1 entspricht.
 Wir sehen das Startproblem als ein eigenes Teilproblem und fügen deshalb überall + 1 an...
 
 ### Aufgabe 2.1
+
 Iterative Formel f(n) = 3 * (2^n-1) + 1
 3 Pushes pro Schleifendurchlauf und + 1 für das Startproblem (der erste Push)
 
-
 ### Aufgabe 2.2
+
 Rekursiv Formel f(n) = (2 * f(n-1) + 2)
-Jeder höhere Wert von N ist doppelt so groß + 2 
+Jeder höhere Wert von N ist doppelt so groß + 2
 
 ### Aufgabe 2.3
+
 f(42) = 13.194.139.533.311
 
 ### Aufgabe 2.4
+
 2*n + 1
