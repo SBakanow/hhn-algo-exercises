@@ -21,15 +21,12 @@ public class DLXPentominoUYZ {
   private static final int m = 5;
 
   public static void main(String[] args) {
-    //int n = getInput(args);
+    int n = getInput(args);
     System.out.printf("n | a(n)%n---------%n");
-    for (int i = 0; i < 24; i++) {
-
-      List<int[]> positions = calculatePositions(i);
-      DLXNode header = buildMatrix(positions, i * m);
-      int cnt = search(0, header);
-      System.out.println(String.format("%d | %d", i, cnt));
-    }
+    List<int[]> positions = calculatePositions(n);
+    DLXNode header = buildMatrix(positions, n * m);
+    int cnt = search(0, header);
+    System.out.println(String.format("%d | %d", n, cnt));
   }
 
   /**
@@ -109,7 +106,7 @@ public class DLXPentominoUYZ {
   }
 
   /**
-   * Fügt ein DLXNode über dem Header ein indem es die Verknüpfungen anpasst.
+   * Fügt ein DLXNode über dem Header ein, indem es die Verknüpfungen anpasst.
    *
    * @param header  Header der Spalte
    * @param newNode Element das eingefügt werden soll
